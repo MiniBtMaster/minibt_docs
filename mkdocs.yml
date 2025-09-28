@@ -43,7 +43,7 @@ extra_javascript:
 nav:
   - 首页: index.md
   
-  - MiniBT 量化交易基本使用:
+  - MiniBT基本使用:
     - 1.0 教程总览: minibt_basic/1.0minibt_quant_trading_series_tutorial.md
     - 1.1 简介: minibt_basic/1.1minibt_intro.md
     - 1.2 安装教程: minibt_basic/1.2minibt_install.md
@@ -60,7 +60,7 @@ nav:
     - 1.13 Line类指南: minibt_basic/1.13minibt_internal_data_line_guide.md
     - 1.14 BtIndicator类指南: minibt_basic/1.14minibt_btindicator_class_guide.md
   
-  - MiniBT 量化交易策略:
+  - MiniBT交易策略:
     - 2.1Aberration（布林线突破）策略: minibt_strategies/2.1_aberration_breakout_strategy.md
     # - 动量策略:
     #     - 1. 动量策略基础: minibt_strategies/2.1_aberration_breakout_strategy1.md
@@ -68,7 +68,7 @@ nav:
     # - 趋势策略:
     #     - 1. 趋势策略基础: minibt_strategies/2.1_aberration_breakout_strategy3.md
     #     - 2. 超级趋势策略: minibt_strategies/2.1_aberration_breakout_strategy4.md
-  - MiniBT 量化交易之 TradingView 指标:
+  - TradingView指标:
     - 3.1 Powertrend Volume Range Filter: minibt_tradingview_indicators/3.1_powertrend_volume_range_filter.md
     - 3.2 G Channels: minibt_tradingview_indicators/3.2_g_channels.md
     - 3.3 STD-Filtered N-Pole Gaussian Filter: minibt_tradingview_indicators/3.3_std_filtered_n_pole_gaussian_filter.md
