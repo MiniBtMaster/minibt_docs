@@ -43,7 +43,3 @@
 - [3.4 MiniBT 量化交易之 TradingView 指标：Adaptive Trend Filter](minibt_tradingview_indicators/3.4_adaptive_trend_filter.md)
 - [3.5 MiniBT 量化交易之 TradingView 指标：Multi-Step Vegas SuperTrend](minibt_tradingview_indicators/3.5_multi_step_vegas_supertrend.md)
 - [3.6 MiniBT 量化交易之 TradingView 指标：The Flash Strategy](minibt_tradingview_indicators/3.6_the_flash_strategy.md)
-
----
-
-若需确保链接可用，请仔细核对**文件夹名称、文件名（含标点、空格）与路径**的完全一致性～ 希望本知识库能为你的量化学习提供帮助～
