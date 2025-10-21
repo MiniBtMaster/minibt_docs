@@ -1,0 +1,71 @@
+/* docs/css/custom.css */
+#back-to-top {
+    position: fixed;
+    bottom: 40px;  /* 增加底部距离 */
+    right: 40px;   /* 增加右侧距离 */
+    width: 70px;   /* 增大按钮宽度 */
+    height: 70px;  /* 增大按钮高度 */
+    border-radius: 50%;
+    background: rgba(66, 133, 244, 0.9);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#back-to-top svg {
+    width: 36px;    /* 增大 SVG 尺寸 */
+    height: 36px;   /* 增大 SVG 尺寸 */
+    display: block;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background: rgba(66, 133, 244, 1);
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 响应式设计 - 针对移动设备调整 */
+@media (max-width: 768px) {
+    #back-to-top {
+        bottom: 25px;
+        right: 25px;
+        width: 60px;
+        height: 60px;
+    }
+    
+    #back-to-top svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* 自定义导航样式 */
+.md-nav__item .md-nav__list {
+    margin-left: 15px;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    padding-left: 10px;
+    display: inherit; 
+}
+
+/* 活动导航项高亮 */
+.md-nav__link--active {
+    font-weight: bold;
+    color: #4285f4;
+}
+
+/* 导航项悬停效果 */
+.md-nav__link:hover {
+    color: #4285f4;
+} 
