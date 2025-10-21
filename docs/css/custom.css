@@ -1,0 +1,144 @@
+/* docs/css/custom.css */
+
+/* 返回顶部按钮（保留交互） */
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(66, 133, 244, 0.9);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#back-to-top svg {
+    width: 36px;
+    height: 36px;
+    display: block;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background: rgba(66, 133, 244, 1);
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    #back-to-top {
+        bottom: 25px;
+        right: 25px;
+        width: 60px;
+        height: 60px;
+    }
+
+    #back-to-top svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* 左侧导航样式（保留视觉） */
+.md-nav__item .md-nav__list {
+    margin-left: 10px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 0px;
+    display: inherit;
+}
+
+.md-nav__link--active {
+    font-weight: bold;
+    color: #4285f4;
+}
+
+.md-nav__link:hover {
+    color: #4285f4;
+}
+
+/* ========== 核心调整：缩小全局边距 + 主题变量控制布局 ========== */
+
+/* 1. 页面全局容器：减少左右边距，让内容贴近屏幕 */
+.md-grid {
+    margin-left: 32px;
+    /* 左侧边距缩小（默认约32px） */
+    margin-right: 32px;
+    /* 右侧边距缩小（默认约32px） */
+    max-width: none;
+    /* 取消最大宽度限制，让布局更灵活 */
+}
+
+/* 2. 主题变量：控制侧边栏宽度 + 内容区占比 */
+:root {
+    --md-sidebar-width: 400px;
+    /* 侧边栏宽度（可按需调大，如300px） */
+    --md-content-max-width: 100%;
+    /* 中间内容区占满剩余宽度 */
+}
+
+/* 3. 代码块防溢出：长代码横向滚动 */
+.md-content pre {
+    overflow-x: auto;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    /* 移动端平滑滚动 */
+}
+
+/* ========== 响应式：小屏幕下保持可读性 ========== */
+
+@media (max-width: 900px) {
+    .md-grid {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    :root {
+        --md-sidebar-width: 240px;
+        /* 小屏幕缩小侧边栏宽度 */
+    }
+}
+
+@media (max-width: 600px) {
+    .md-grid {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    :root {
+        --md-sidebar-width: 0;
+        /* 超小屏幕隐藏侧边栏，内容全屏 */
+    }
+}
+
+/* 仅在手机版（小屏幕）将目录项改为竖排 */
+@media (max-width: 768px) {
+
+    /* 768px是常见手机屏幕断点，可根据实际调整 */
+    .md-nav__item .md-nav__list {
+        display: block;
+        /* 块级显示，子项自动竖排 */
+        margin-left: 0;
+        padding-left: 10px;
+        /* 保持适当缩进 */
+    }
+
+    .md-nav__item .md-nav__list>.md-nav__item {
+        display: block;
+        /* 确保每个子项单独成行 */
+        margin: 8px 0;
+        /* 增加上下间距，优化阅读体验 */
+    }
+}
