@@ -4,23 +4,51 @@ site_description: 专注于MiniBT量化交易框架的使用教程、策略开�
 site_author: MiniBT 团队
 
 theme:
-  name: material  # 推荐使用 material 主题
+  name: material
+  # 添加logo
+  logo: plot/minibt.png
+  favicon: plot/minibt.png
+  # 增强功能特性
   features:
     - navigation.tabs
-    - navigation.expand  # 允许导航项展开/收起
+    - navigation.expand
     - navigation.sections
+    - navigation.indexes
+    - navigation.instant  # 即时跳转
+    - navigation.tracking  # 跟踪当前章节
     - navigation.path
     - search.suggest
     - search.highlight
     - content.tabs
+    - content.code.copy
+    - content.code.select
+    - toc.follow
+    - header.autohide
+  # 调色板配置 - 添加深色模式
   palette:
-    primary: blue
-    accent: indigo
+    - scheme: default
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到深色模式
+    - scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换到浅色模式
+  # 字体配置
+  font:
+    text: Roboto
+    code: Roboto Mono
   language: zh
 
 plugins:
   - search
   - autorefs
+  - minify:
+      minify_html: true
 
 markdown_extensions:
   - admonition
@@ -28,46 +56,113 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
   - pymdownx.inlinehilite
   - pymdownx.tabbed:
       alternate_style: true
-    
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+      toc_depth: 3
+      baselevel: 1
+      separator: "_"
+      # slugify: !!python/name:pymdownx.slugs.uslugify
+      # slugify: !!python/name:pymdownx.slugs.slugify
+  - tables
+  - attr_list
+  - footnotes
+  - def_list
+  - meta
+
 # 添加自定义 CSS 和 JavaScript
 extra_css:
   - css/custom.css
-  # - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css  # 添加 Font Awesome
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css
+  # - css/giscus.css
 
 extra_javascript:
   - js/back-to-top.js
+  - js/custom.js
+  # - js/giscus.js
+
+# 额外配置
+extra:
+  # 社交链接
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/MiniBtMaster/minibt
+      name: GitHub-minibt
+    - icon: fontawesome/brands/github
+      link: https://twitter.com/MiniBtMaster/minibt_docs
+      name: GitHub-minibt_docs
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/minibt/
+      name: PyPI
+    - icon: fontawesome/brands/weixin
+      link: https://weixin.qq.com/minibt
+      name: 微信公众号
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com/c/MiniBT
+      name: bilibili
+
+  # 作者信息
+  author:
+    name: MiniBT Team
+    github: "@MiniBtMaster"
+
+  # 页脚链接
+  footer_links:
+    - 关于我们: about.md
+    - 联系方式: contact.md
+    - 更新日志: changelog.md
 
 nav:
   - 首页: index.md
   
   - MiniBT基本使用:
-    - 1.0 教程总览: minibt_basic/1.0minibt_quant_trading_series_tutorial.md
     - 1.1 简介: minibt_basic/1.1minibt_intro.md
     - 1.2 安装教程: minibt_basic/1.2minibt_install.md
     - 1.3 入门实战: minibt_basic/1.3minibt_double_moving_average_strategy.md
     - 1.4 极速启动策略: minibt_basic/1.4minibt_fast_start_strategy.md
     - 1.5 参数优化教程: minibt_basic/1.5minibt_strategy_param_optimization.md
     - 1.6 数据获取指南: minibt_basic/1.6minibt_strategy_data_retrieval.md
-    - 1.7 B类介绍: minibt_basic/1.7minibt_bt_class_intro.md
+    - 1.7 BT类介绍: minibt_basic/1.7minibt_bt_class_intro.md
     - 1.8 策略类指南: minibt_basic/1.8minibt_strategy_class_guide.md
     - 1.9 指标基类指南: minibt_basic/1.9minibt_indicatorsbase_class_guide.md
-    - 1.10 dataframe类指南: minibt_basic/1.10minibt_internal_data_dataframe_guide.md
-    - 1.11 BtData类指南: minibt_basic/1.11minibt_internal_data_btdata_guide.md
-    - 1.12 series类指南: minibt_basic/1.12minibt_internal_data_series_guide.md
+    - 1.10 IndFrame类指南: minibt_basic/1.10minibt_internal_data_dataframe_guide.md
+    - 1.11 KLine类指南: minibt_basic/1.11minibt_internal_data_btdata_guide.md
+    - 1.12 IndSeries类指南: minibt_basic/1.12minibt_internal_data_series_guide.md
     - 1.13 Line类指南: minibt_basic/1.13minibt_internal_data_line_guide.md
     - 1.14 BtIndicator类指南: minibt_basic/1.14minibt_btindicator_class_guide.md
+    - 1.15 K线回放: minibt_basic/1.15minibt_kline_replay.md
+    - 1.16 天勤实时图表功能: minibt_basic/1.16minibt_live_trading_plot.md
+    - 1.17 实盘多策略合约系统介绍: minibt_basic/1.17minibt_multi_strategy_live_trading_system.md
+    - 1.18 交易日志系统使用简介: minibt_basic/1.18minibt_transaction_log.md
+    - 1.19 btplot 函数功能说明: minibt_basic/1.19minibt_interactive_financial_charting_with_btplot.md
+    - 1.20 btplot 函数功能说明: minibt_basic/1.20minibt_order_system.md
   
   - MiniBT交易策略:
     - 2.1Aberration（布林线突破）策略: minibt_strategies/2.1_aberration_breakout_strategy.md
-    # - 动量策略:
-    #     - 1. 动量策略基础: minibt_strategies/2.1_aberration_breakout_strategy1.md
-    #     - 2. RSI动量策略: minibt_strategies/2.1_aberration_breakout_strategy2.md
-    # - 趋势策略:
-    #     - 1. 趋势策略基础: minibt_strategies/2.1_aberration_breakout_strategy3.md
-    #     - 2. 超级趋势策略: minibt_strategies/2.1_aberration_breakout_strategy4.md
+    - 2.2 三重指数平滑平均线 (TRIX) 趋势策略: minibt_strategies/2.2_trix_strategy.md
+    - 2.3 CMO策略: minibt_strategies/2.3_cmo_strategy.md
+    - 2.4 涡旋指标策略: minibt_strategies/2.4_vortex-indicator-strategy.md
+    - 2.5 Hull移动平均线策略: minibt_strategies/2.5_hull-strategy.md
+    - 2.6 Keltner Channel策略: minibt_strategies/2.6_keltner_channel_strategy.md
+    - 2.7 Qstick趋势策略: minibt_strategies/2.7_qstick_strategy.md
+    - 2.8 Aroon指标趋势交易策略: minibt_strategies/2.8_aroon_strategy.md
+    - 2.9 量价趋势策略（VPT）: minibt_strategies/2.9_vpt_strategy.md
+    - 2.10 自动扶梯策略: minibt_strategies/2.10_escalator_strategy.md
+    - 2.11 Dual Thrust策略: minibt_strategies/2.11_dual_thrust_strategy.md
+    - 2.12 卡尔曼滤波配对交易策略: minibt_strategies/2.12_kalman_filter-strategy.md
+    - 2.13 基于距离的配对交易策略: minibt_strategies/2.13_distance_based_strategy.md
+    - 2.14 CCI均值回归策略: minibt_strategies/2.14_cci_strategy.md
+    - 2.15 RSI超买/超卖交易策略: minibt_strategies/2.15_rsi_strategy.md
+    - 2.16 Z-Score均值回归策略: minibt_strategies/2.16_zscore_strategy.md
+    - 2.17 复合均值回归策略: minibt_strategies/2.17_mean_reversion_strategy.md
+    - 2.18 随机森林预测策略: minibt_strategies/2.18_random_forest_strategy.md
+  
   - TradingView指标:
     - 3.1 Powertrend Volume Range Filter: minibt_tradingview_indicators/3.1_powertrend_volume_range_filter.md
     - 3.2 G Channels: minibt_tradingview_indicators/3.2_g_channels.md
@@ -75,14 +170,44 @@ nav:
     - 3.4 Adaptive Trend Filter: minibt_tradingview_indicators/3.4_adaptive_trend_filter.md
     - 3.5 Multi-Step Vegas SuperTrend: minibt_tradingview_indicators/3.5_multi_step_vegas_supertrend.md
     - 3.6 The Flash Strategy: minibt_tradingview_indicators/3.6_the_flash_strategy.md
+    - 3.7 Multi-Step Vegas SuperTrend Strategy: minibt_tradingview_indicators/3.7_multi_step_vegas_superTrend_strategy.md
+    - 3.8 LOWESS Locally Weighted Scatterplot Smoothing: minibt_tradingview_indicators/3.8_lowess_locally_weighted_scatterplot_smoothing.md
+    - 3.9 John Ehlers The Price Radio: minibt_tradingview_indicators/3.9_john_ehlers_the_price_radio.md
+    - 3.10 PMax Explorer: minibt_tradingview_indicators/3.10_pmax_explorer.md
+    - 3.11 RJ Trend Engine Final Version: minibt_tradingview_indicators/3.11_rj_trend_engine_final_version.md
+    - 3.12 Twin Range Filter Buy Sell Signals: minibt_tradingview_indicators/3.12_twin_kange_filter.md
+    - 3.13 UT Bot Alerts: minibt_tradingview_indicators/3.13_ut_bot_alerts.md
+    - 3.14 SuperTrend: minibt_tradingview_indicators/3.14_supertrend.md
+    - 3.15 WaveTrend Oscillator: minibt_tradingview_indicators/3.15_wavetrend_oscillator.md
+    - 3.16 Pivot Point Supertrend: minibt_tradingview_indicators/3.16_pivot_point_supertrend.md
+    - 3.17 AlphaTrend: minibt_tradingview_indicators/3.17_alphatrend.md
+    - 3.18 Chandelier Exit: minibt_tradingview_indicators/3.18_chandelier_exit.md
+    - 3.19 SuperTrend Strategy: minibt_tradingview_indicators/3.19_supertrend_strategy.md
+    - 3.20 Optimized Trend Tracker: minibt_tradingview_indicators/3.20_optimized_trend_tracker.md
+    - 3.21 Turtle Trade Channels Indicator: minibt_tradingview_indicators/3.21_turtle_trade_channels_indicator.md
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/MiniBtMaster
-      name: GitHub
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/MiniBtMaster
-      name: Twitter
+  - MiniBT强化学习:
+    - 4.1 强化学习在量化交易中的应用: minibt_reinforcement_learning/4.1reinforcement_learning_for_quantitative_trading_with_minibt.md
+    - 4.2 强化学习参数调优完整指南: minibt_reinforcement_learning/4.2the_complete_parameter_tuning_guide.md
+    - 4.3 强化学习算法选择指南: minibt_reinforcement_learning/4.3algorithm_selection_for_trading_strategies.md
+    - 4.4 代码解析与验证集优异表现分析: minibt_reinforcement_learning/4.4code_analysis_and_validation_outperformance.md
+    - 4.5 AgentDDPG算法在minibt中的应用: minibt_reinforcement_learning/4.5DDPG_training_validation_analysis.md
+    - 4.6 AgentDoubleDQN算法在minibt框架中的实现与性能分析: minibt_reinforcement_learning/4.6DoubleDQN_strategy_validation.md
+  
+  - 使用技巧:
+    - dataframe 指标数据解包: minibt_tips/1.1_effortless_dataframe_indicator_unpacking.md
+
+  - API参考:
+    - PandasTa: minibt_api_reference/pandasta.md
+    - TaLib: minibt_api_reference/talib.md
+    - TqFunc: minibt_api_reference/tqfunc.md
+    - TqTa: minibt_api_reference/tqta.md
+    - TradingView: minibt_api_reference/tradingview.md
+
+  # 额外页面
+  - 常见问题: faq.md
+  - 关于我们: about.md
+  - 联系方式: contact.md
+  - 更新日志: changelog.md
 
 copyright: Copyright &copy; 2025 MiniBT Team

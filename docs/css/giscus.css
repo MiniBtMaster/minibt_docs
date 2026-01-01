@@ -1,0 +1,48 @@
+/* Giscus 评论系统样式 */
+.giscus-container {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: var(--md-default-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--md-primary-fg-color--light);
+}
+
+.comments-title {
+    color: var(--md-primary-fg-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--md-primary-fg-color);
+    padding-bottom: 0.5rem;
+}
+
+.comments-desc {
+    color: var(--md-default-fg-color--light);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Giscus 主题适配 */
+.giscus-frame {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+/* 暗色模式适配 */
+[data-md-color-scheme="slate"] .giscus-container {
+    background: var(--md-default-bg-color);
+    border-color: var(--md-primary-fg-color--dark);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .giscus-container {
+        margin: 2rem 0;
+        padding: 1rem;
+    }
+    
+    .comments-title {
+        font-size: 1.3rem;
+    }
+}
