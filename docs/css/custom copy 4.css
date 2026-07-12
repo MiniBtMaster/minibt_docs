@@ -1,0 +1,576 @@
+/* MiniBT 量化交易知识库 - 增强版样式 */
+
+/* ========== 1. 返回顶部按钮 ========== */
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(66, 133, 244, 0.9);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(66, 133, 244, 0.3);
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+#back-to-top svg {
+    width: 36px;
+    height: 36px;
+    display: block;
+    color: white;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background: rgba(66, 133, 244, 1);
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 8px 25px rgba(66, 133, 244, 0.4);
+}
+
+/* ========== 2. Logo 尺寸调整 ========== */
+.md-header__button.md-logo img {
+    height: 1.8rem;
+    /* 从默认的 2.5rem 调整为 1.8rem */
+    width: auto;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.md-header__button.md-logo:hover img {
+    transform: scale(1.05);
+}
+
+
+/* ========== 3. 导航栏增强 ========== */
+.md-nav__item .md-nav__list {
+    margin-left: 12px;
+    border-left: 2px solid rgba(66, 133, 244, 0.2);
+    padding-left: 12px;
+    display: inherit;
+    transition: all 0.3s ease;
+}
+
+.md-nav__link--active {
+    font-weight: 700;
+    color: #4285f4;
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), transparent);
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin: 2px 0;
+}
+
+.md-nav__link:hover {
+    color: #4285f4;
+    transform: translateX(4px);
+    transition: all 0.2s ease;
+}
+
+/* ========== 顶栏高度设置 ========== */
+.md-header {
+    height: 50px;
+    /* 设置顶栏高度 */
+}
+
+.md-header__inner {
+    height: 100%;
+    /* 确保内部元素适应新高度 */
+    padding: 0.8rem 0;
+    /* 调整垂直内边距 */
+}
+
+.md-header__title {
+    margin-top: 0;
+    /* 调整标题位置 */
+}
+
+/* ========== 右侧对齐 ========== */
+/* nav.md-tabs .md-tabs__list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+nav.md-tabs .md-tabs__item:contains("常见问题"),
+nav.md-tabs .md-tabs__item:contains("关于我们"), 
+nav.md-tabs .md-tabs__item:contains("联系方式"),
+nav.md-tabs .md-tabs__item:contains("更新日志") {
+    margin-left: auto;
+} */
+
+/* ========== 4. 代码块美化 ========== */
+.highlight {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.highlight pre {
+    margin: 0;
+    padding: 1.5rem;
+    background: var(--md-code-bg-color);
+}
+
+.highlight .copybtn {
+    background: rgba(66, 133, 244, 0.9);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.highlight .copybtn:hover {
+    background: #4285f4;
+    transform: scale(1.05);
+}
+
+/* ========== 5. 表格美化 ========== */
+.md-typeset table:not([class]) {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.md-typeset table:not([class]) th {
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+    border: none;
+}
+
+.md-typeset table:not([class]) td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+    background: rgba(66, 133, 244, 0.05);
+}
+
+/* ========== 6. 警告框美化 ========== */
+.md-typeset .admonition {
+    border-radius: 12px;
+    border-left-width: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin: 1.5rem 0;
+    transition: transform 0.2s ease;
+}
+
+.md-typeset .admonition:hover {
+    transform: translateY(-2px);
+}
+
+/* ========== 7. 社交链接样式 ========== */
+.md-social__link {
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.md-social__link:hover {
+    transform: scale(1.2) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.3);
+    background: #4285f4;
+}
+
+/* ========== 8. 搜索框美化 ========== */
+.md-search__form {
+    border-radius: 25px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.md-search__form:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== 9. 布局优化 ========== */
+.md-grid {
+    margin-left: 32px;
+    margin-right: 32px;
+    max-width: none;
+}
+
+:root {
+    --md-sidebar-width: 380px;
+    --md-content-max-width: 100%;
+}
+
+.md-content pre {
+    overflow-x: auto;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ========== 10. 暗色模式优化 ========== */
+[data-md-color-scheme="slate"] {
+    --md-default-bg-color: #1a1a1a;
+    --md-default-fg-color: #e0e0e0;
+    --md-code-bg-color: #2d2d2d;
+}
+
+[data-md-color-scheme="slate"] .md-nav__item .md-nav__list {
+    border-left-color: rgba(66, 133, 244, 0.3);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ========== 11. 按钮样式 ========== */
+.md-button {
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+}
+
+.md-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.3);
+}
+
+/* ========== 12. 标签页样式 ========== */
+.tabbed-set {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tabbed-content {
+    padding: 1.5rem;
+    background: var(--md-default-bg-color);
+}
+
+/* ========== 13. 图片样式 ========== */
+.md-typeset img {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    margin: 1.5rem 0;
+}
+
+.md-typeset img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== 14. 引用样式 ========== */
+blockquote {
+    border-left: 6px solid #4285f4;
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), transparent);
+    border-radius: 0 12px 12px 0;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    position: relative;
+}
+
+blockquote::before {
+    content: "" ";
+ font-size: 4rem;
+    color: rgba(66, 133, 244, 0.2);
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    font-family: serif;
+}
+
+/* ========== 15. 进度条样式 ========== */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+    z-index: 1001;
+    transition: width 0.3s ease;
+}
+
+/* ========== 16. 响应式设计 ========== */
+@media (max-width: 900px) {
+    .md-grid {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    :root {
+        --md-sidebar-width: 280px;
+    }
+
+    #back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+    }
+
+    #back-to-top svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .md-grid {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    :root {
+        --md-sidebar-width: 0;
+    }
+
+    .md-typeset .admonition {
+        margin: 1rem 0;
+    }
+
+    .highlight {
+        margin: 1rem 0;
+    }
+}
+
+/* ========== 17. Logo 移动端适配 ========== */
+/* @media (max-width: 76.1875em) {
+    .md-header__button.md-logo img {
+        height: 1.6rem;
+    }
+
+    
+} */
+/* ========== 修复手机端导航问题（不影响桌面端侧边栏） ========== */
+@media (max-width: 76.1875em) {
+
+    /* 修复一级导航标签页高度和内边距 - 移动端强制竖排紧凑显示 */
+    .md-tabs {
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+    }
+
+    .md-tabs__list {
+        display: flex !important;
+        flex-direction: column !important;
+        /* 强制竖排 */
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        flex-wrap: nowrap !important;
+        /* 禁止换行 */
+    }
+
+    .md-tabs__item {
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        flex: none !important;
+        /* 取消弹性伸缩，确保全宽 */
+    }
+
+    .md-tabs__link {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 12px 16px !important;
+        /* 紧凑内边距 */
+        margin: 0 !important;
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        white-space: normal !important;
+        /* 允许文字换行 */
+        box-sizing: border-box !important;
+        border-radius: 0 !important;
+        text-align: left !important;
+    }
+
+    /* 移除标签页的激活状态底部边框，改为左侧标识 */
+    .md-tabs__item--active {
+        border-bottom: none !important;
+    }
+
+    .md-tabs__link--active {
+        background: rgba(66, 133, 244, 0.1) !important;
+        color: #4285f4 !important;
+        font-weight: 600 !important;
+        border-left: 4px solid #4285f4 !important;
+    }
+
+    /* 确保标签页容器正确显示 */
+    .md-tabs__inner {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* 修复二级导航横向滚动问题 - 只针对移动端 */
+    .md-nav--secondary .md-nav__list {
+        display: block !important;
+        overflow: visible !important;
+        white-space: normal !important;
+        flex-direction: column !important;
+    }
+
+    .md-nav--secondary .md-nav__item {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .md-nav--secondary .md-nav__link {
+        display: block !important;
+        width: 100% !important;
+        padding: 0.8rem 1rem !important;
+        white-space: normal !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 移动端二级导航 hover 效果简化（不影响桌面端） */
+    .md-nav--secondary .md-nav__link:hover {
+        transform: none !important;
+        background: rgba(66, 133, 244, 0.05) !important;
+    }
+
+    /* 确保导航容器不限制宽度 */
+    .md-nav--secondary {
+        overflow: visible !important;
+        max-width: 100% !important;
+    }
+
+    /* Logo 移动端适配 */
+    .md-header__button.md-logo img {
+        height: 1.6rem !important;
+    }
+}
+
+/* ========== 更小屏幕的额外优化 ========== */
+@media (max-width: 480px) {
+    .md-tabs__link {
+        padding: 10px 12px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .md-nav--secondary .md-nav__link {
+        padding: 0.7rem 0.8rem !important;
+        font-size: 0.9rem;
+    }
+}
+
+/* ========== 确保所有导航项都能完整显示（全局生效，不影响hover） ========== */
+.md-tabs__item {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.md-tabs__link {
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.md-nav__item {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.md-nav__link {
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* ========== 保留桌面端悬停效果（不影响移动端） ========== */
+@media (min-width: 76.1875em) {
+
+    /* 桌面端一级导航 hover 效果 */
+    .md-tabs__link:hover {
+        color: #4285f4 !important;
+        background: rgba(66, 133, 244, 0.05) !important;
+        transition: all 0.2s ease;
+    }
+
+    /* 桌面端侧边栏导航 hover 效果 */
+    .md-nav__link:hover {
+        color: #4285f4 !important;
+        transform: translateX(4px) !important;
+        transition: all 0.2s ease !important;
+    }
+}
+
+/* ========== 18. 动画效果 ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.md-content {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ========== 19. 自定义滚动条 ========== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--md-default-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4285f4;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3367d6;
+}
+
+/* ========== 20. 页脚美化 ========== */
+.md-footer {
+    background: linear-gradient(135deg, var(--md-primary-fg-color), #2b6cb0);
+    color: white;
+    margin-top: 3rem;
+}
+
+.md-footer-meta {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* ========== 21. 分割线样式 ========== */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #4285f4, transparent);
+    margin: 2.5rem 0;
+}
