@@ -4,11 +4,10 @@
 
 ## 相关资源
 
-- <i class="fa-brands fa-zhihu"></i> [minibt量化教程专栏](https://zhuanlan.zhihu.com/column/c_1942555756558783128)
-- <i class="fa-solid fa-globe"></i> [minibt量化教程](https://www.minibt.cn)
+- <i class="fa-brands fa-zhihu"></i> [知乎专栏](https://zhuanlan.zhihu.com/column/c_1942555756558783128)
+<!-- - <i class="fa-solid fa-globe"></i> [minibt官网](https://www.minibt.cn) -->
 - <i class="fa-brands fa-github"></i> [GitHub仓库](https://github.com/MiniBtMaster/minibt)
 - <i class="fa-brands fa-python"></i> [PyPI仓库](https://pypi.org/project/minibt/)
-
 
 ## 核心内容导航
 
@@ -24,13 +23,21 @@
 - [1.7 MiniBT 量化交易：Bt类介绍](minibt_basic/1.7minibt_bt_class_intro.md)
 - [1.8 MiniBT 量化交易：策略类(Strategy)完整指南](minibt_basic/1.8minibt_strategy_class_guide.md)
 - [1.9 MiniBT 量化交易：指标基类(IndicatorsBase)完整指南](minibt_basic/1.9minibt_indicatorsbase_class_guide.md)
-- [1.10 MiniBT 量化交易：内部数据 dataframe 类完整指南](minibt_basic/1.10minibt_internal_data_dataframe_guide.md)
-- [1.11 MiniBT 量化交易：内部数据 BtData 类完整指南](minibt_basic/1.11minibt_internal_data_btdata_guide.md)
-- [1.12 MiniBT 量化交易：内部数据 series 类完整指南](minibt_basic/1.12minibt_internal_data_series_guide.md)
+- [1.10 MiniBT 量化交易：内部数据 IndFrame 类完整指南](minibt_basic/1.10minibt_internal_data_dataframe_guide.md)
+- [1.11 MiniBT 量化交易：内部数据 KLine 类完整指南](minibt_basic/1.11minibt_internal_data_btdata_guide.md)
+- [1.12 MiniBT 量化交易：内部数据 IndSeries 类完整指南](minibt_basic/1.12minibt_internal_data_series_guide.md)
 - [1.13 MiniBT 量化交易：内部数据 Line 类完整指南](minibt_basic/1.13minibt_internal_data_line_guide.md)
 - [1.14 MiniBT 量化交易：指标构造器 BtIndicator 类完整指南](minibt_basic/1.14minibt_btindicator_class_guide.md)
 - [1.15 MiniBT 量化交易：K线回放](minibt_basic/1.15minibt_kline_replay.md)
-- [1.16 MiniBT 量化交易：天勤实时图表功能](minibt_basic/1.16minibt_live_trading_plot.md)
+- [1.16 MiniBT 量化交易：交易日志系统使用简介](minibt_basic/1.16minibt_transaction_log.md)
+- [1.17 MiniBT 量化交易：btplot 函数功能说明](minibt_basic/1.17minibt_interactive_financial_charting_with_btplot.md)
+- [1.18 MiniBT 量化交易：订单系统介绍](minibt_basic/1.18minibt_order_system.md)
+- [1.19 MiniBT 量化交易：实时图表系统Lightweight Charts介绍](minibt_basic/1.19minibt_lightweight_charts.md)
+- [1.20 MiniBT 量化交易：Stop 类灵活高效的多空止损止盈管理方案](minibt_basic/1.20minibt_stop.md)
+- [1.21 MiniBT 量化交易：三种实盘运行模式介绍](minibt_basic/1.21minibt_realtime_trading_modes.md)
+- [1.22 MiniBT 量化交易：signal_backtest 止损止盈参数全量测试案例](minibt_basic/1.22minibt_signal_backtest_stop_profit_test.md)
+- [1.23 MiniBT 量化交易：signal_backtest 指标信号参数优化详解](minibt_basic/1.23minibt_signal_backtest_optimize.md)
+- [1.24 MiniBT 量化交易：策略回放与回测结果图表展示](minibt_basic/1.24minibt_replay_and_light_chart_display.md)
 
 ### 二、MiniBT量化交易策略
 本系列聚焦 **MiniBT 量化交易策略实战**，包含各类经典/创新策略的开发与应用：
@@ -90,13 +97,39 @@
 - [4.6 MiniBT 量化交易：AgentDoubleDQN算法在minibt框架中的实现与性能分析](minibt_reinforcement_learning/4.6DoubleDQN_strategy_validation.md)
 
 ### 五、使用技巧
-掌握 MiniBT 高效使用技巧，提升开发效率与策略性能：
+掌握 **MiniBT 高效使用技巧**，提升开发效率与策略性能：
 
-- [dataframe 指标数据解包](minibt_tips/5.1_effortless_dataframe_indicator_unpacking.md)
-  
-### 六、API参考
-MiniBT 核心技术指标库 API 参考，提供完整的函数说明与使用示例
+- [5.1 IndFrame 指标数据解包](minibt_tips/5.1_effortless_dataframe_indicator_unpacking.md)
+- [5.2 lines 赋值 vs 返回数据 两种方法使用技巧](minibt_tips/5.2_lines_assignment_vs_return_data.md)
+- [5.3 内置指标 rolling_apply 函数完整用法详解](minibt_tips/5.3_rolling_apply_func.md)
+- [5.4 next 函数中获取最新数据](minibt_tips/5.4_get_latest_data_in_next.md)
+- [5.6 stop_callback 动态止损止盈回调装饰器](minibt_tips/5.6_stop_callback_usage.md)
+- [5.7 自定义指标开发技巧：注意使用 `.copy()` 避免只读数组错误](minibt_tips/5.7_indicator_array_copy.md)
 
+### 六、MiniQT 使用教程
+MiniQT 是基于 PyQt6 和 minibt 的量化交易可视化客户端，提供实时行情查看、K线图表分析、策略回测等功能：
+
+- [6.1 MiniQT 介绍](minibt_miniqt/6.1_miniqt_intro.md)
+- [6.2 主界面介绍](minibt_miniqt/6.2_main_window.md)
+- [6.3 行情报价模块](minibt_miniqt/6.3_market_quote.md)
+- [6.4 策略回测模块](minibt_miniqt/6.4_backtest.md)
+- [6.5 开发工具](minibt_miniqt/6.5_dev_tools.md)
+- [6.6 K线图表使用详解](minibt_miniqt/6.6_kline_chart.md)
+- [6.7 期货与股票数据切换](minibt_miniqt/6.7_data_comparison.md)
+- [6.8 K线更新逻辑详解](minibt_miniqt/6.8_kline_update_logic.md)
+
+### 七、API参考
+MiniBT 核心技术库 **API 参考**，提供完整的函数说明与使用示例
+
+- [API 索引](api/index.md)
+- [核心框架](api/01_framework.md)
+- [数据层](api/02_data.md)
+- [自定义指标](api/03_custom_indicators.md)
+- [第三方指标库](api/04_indicator_libs.md)
+- [订单与止损](api/05_order_and_stop.md)
+- [交易与可视化](api/06_trade_and_viz.md)
+- [常量与工具](api/07_constants.md)
+- [强化学习](api/08_rl.md)
 - [PandasTa](minibt_api_reference/pandasta.md)
 - [TaLib](minibt_api_reference/talib.md)
 - [TqFunc](minibt_api_reference/tqfunc.md)
